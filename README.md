@@ -16,3 +16,5 @@ The layers of the network are as follows :
 * Output Layer
 
 The model has been trained using *Tensorflow* ( Python3 ) and loaded into *Tensorspace* for visualization. The user input is fed to the model using *Canvas* as input.
+
+A better training on the network is required. The main aim of doing this project was visualization.
