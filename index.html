@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualizing a Convolutional Neural Network for MNIST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/0.15.0/tf.min.js"></script>
+    <script src="./lib/TrackballControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tensorspace@0.3.0/build/tensorspace.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <canvas id="clone" width="28px" height="28px"></canvas>
+    <canvas id="user" width="280px" height="280px"></canvas>
+    <a id="actionMaximize" style="font-size: 1.4rem; position: absolute; right: 31px; bottom: 33px; display: none" class="btn-floating z-depth-0 transparent" onclick="ui.maximize()"><i style="color: rgba(0,0,0,0.22)" class="fas fa-expand-arrows-alt" title="Maximize"></i></a>
+    <div class="fixed-action-btn" id="controls">
+      <a class="btn-floating btn-large transparent z-depth-0" style="border-radius: 8px;">
+        <i class="fas fa-bars" style="font-size: 1.4rem; color: rgba(0,0,0,0.22)"></i>
+      </a>
+      <ul>
+        <li><a class="btn-floating green lighten-1 z-depth-0" onclick="ui.predict()"><i class="fas fa-check-double" title="Predict"></i></a></li>
+        <li><a class="btn-floating blue lighten-2 z-depth-0" onclick="ui.erase()"><i class="fas fa-eraser" title="Eraser"></i></a></li>
+        <li id="actionMinimize"><a class="btn-floating red lighten-1 z-depth-0" onclick="ui.minimize()"><i class="fas fa-compress-arrows-alt" title="Minimize"></i></a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class="nav-wrapper amber lighten-1 z-depth-0">
+        <a href="#" class="brand-logo flow-text">&nbsp;&nbsp;Inside CNN</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="https://github.com/abhieshekumar/Visualize-CNN"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="wrapper" id="container">
+    </div>
+  </body>
+  <script src="./asset/model.js"></script>
+  <script src="./asset/ui.js"></script>
+  <script>$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+  });</script>
+</html>
